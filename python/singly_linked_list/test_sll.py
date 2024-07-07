@@ -83,6 +83,22 @@ def test_unshift():
     assert isinstance(sll.head.next, Node)
     assert sll.length == 3
 
+def test_get():
+    sll = SinglyLinkedList()
+
+    sll.push("Mohan")
+    sll.push("Rao")
+
+    assert sll.head is not None
+    assert sll.head.value == "Mohan"
+    assert sll.length == 2
+
+    node = sll.get(position=1)
+    assert isinstance(node, Node)
+    assert node.value == "Rao"
+
+    node = sll.get(position=10)
+    assert node is None
 
 # def test_pop_empty_sll():
 #     sll = SinglyLinkedList()

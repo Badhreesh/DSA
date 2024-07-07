@@ -80,8 +80,17 @@ class SinglyLinkedList:
             self.head, self.tail = None, None
         return current_node
 
-    def get(self):
+    def get(self, position: int) -> Node | None:
         """
         Retrieving a node by its position in the sll.
         """
         ...
+        if position < 0 or position >= self.length:
+            return None
+        current_head = self.head
+        counter = 0
+        while current_head.next:
+            if counter == position:
+                return current_head.next
+            counter += 1
+
